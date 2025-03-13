@@ -24,7 +24,6 @@ import common.money.MonetaryAmount;
  */
 
 public class RewardNetworkImplTests {
-
 	/**
 	 * The object being tested.
 	 */

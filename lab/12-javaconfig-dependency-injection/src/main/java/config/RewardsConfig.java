@@ -62,8 +62,14 @@ public class RewardsConfig {
 	// Set this by adding a constructor.
 	private DataSource dataSource;
 
+	@Autowired
 	public RewardsConfig(DataSource dataSource) {
 		this.dataSource = dataSource;
+	}
+
+	@Bean
+	public RewardNetwork rewardNetwork() {
+		return new RewardNetworkImpl(accountRepository(),restaurantRepository(), rewardRepository());
 	}
 
 	@Bean
@@ -85,11 +91,6 @@ public class RewardsConfig {
 		JdbcRewardRepository repository = new JdbcRewardRepository();
 		repository.setDataSource(dataSource);
 		return repository;
-	}
-
-	@Bean
-	public RewardNetwork rewardNetwork() {
-		return new RewardNetworkImpl(accountRepository(),restaurantRepository(), rewardRepository());
 	}
 
 }

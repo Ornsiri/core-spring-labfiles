@@ -7,6 +7,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import common.money.MonetaryAmount;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import rewards.AccountContribution;
 import rewards.Dining;
 import rewards.RewardConfirmation;
@@ -21,6 +24,7 @@ import rewards.internal.reward.RewardRepository;
  * Besides helping catch bugs early, tests are a great way for a new developer to learn an API as he or she can see the
  * API in action. Tests also help validate a design as they are a measure for how easy it is to use your code.
  */
+
 public class RewardNetworkImplTests {
 
 	/**
